@@ -30,3 +30,118 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env
+
+# ================================
+# Dependencies
+# ================================
+node_modules/
+
+# ================================
+# Build / Production
+# ================================
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.nitro/
+.tanstack/
+.tanstack/**
+.cache/
+.temp/
+.tmp/
+
+# ================================
+# Environment Variables
+# ================================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.local
+
+# Keep an example env file in Git
+!.env.example
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ================================
+# Cloudflare / Wrangler
+# ================================
+.wrangler/
+.dev.vars
+
+# ================================
+# Testing / Coverage
+# ================================
+coverage/
+.nyc_output/
+
+# ================================
+# TypeScript
+# ================================
+*.tsbuildinfo
+
+# ================================
+# Vite
+# ================================
+.vite/
+
+# ================================
+# ESLint / Prettier
+# ================================
+.eslintcache
+.prettiercache
+
+# ================================
+# IDE / Editors
+# ================================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+
+# ================================
+# OS Files
+# ================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ================================
+# Windows
+# ================================
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ================================
+# Temporary / Backup Files
+# ================================
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# ================================
+# Debug files
+# ================================
+debug/
