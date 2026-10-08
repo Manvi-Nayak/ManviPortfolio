@@ -1,0 +1,134 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ManviOS design system — see docs/DESIGN_SYSTEM.md (source of truth).
+ * Dark-only futuristic OS language: near-black surfaces, subtle glass,
+ * electric blue primary accent, purple secondary accent, restrained glow.
+ */
+
+@theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-workspace: var(--workspace);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-glass: var(--glass);
+  --color-glass-hover: var(--glass-hover);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-ring: var(--primary);
+
+  --shadow-glass: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 8px 32px -8px rgb(0 0 0 / 0.6);
+  --shadow-dock: 0 24px 64px -24px rgb(0 0 0 / 0.85);
+  --shadow-glow: 0 0 0 1px oklch(0.68 0.17 259 / 0.45), 0 8px 32px -8px oklch(0.68 0.17 259 / 0.45);
+
+  --ease-os: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --background: oklch(0.145 0 0); /* #050505 */
+  --surface: oklch(0.185 0 0); /* #0D0D0D */
+  --workspace: oklch(0.205 0 0); /* #111111 */
+  --foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.74 0.01 286); /* #A1A1AA */
+  --subtle-foreground: oklch(0.58 0.014 286); /* #71717A */
+  --glass: oklch(1 0 0 / 0.05);
+  --glass-hover: oklch(1 0 0 / 0.08);
+  --border: oklch(1 0 0 / 0.08);
+  --primary: oklch(0.68 0.17 259); /* #4F8CFF */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.6 0.23 302); /* #8B5CF6 */
+  --success: oklch(0.72 0.19 149); /* #22C55E */
+  --warning: oklch(0.77 0.16 70); /* #F59E0B */
+  --destructive: oklch(0.64 0.21 25); /* #EF4444 */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 4rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-snap-type: y proximity;
+    }
+  }
+}
+
+/* Subtle glass surface used by the shell chrome. */
+@utility glass {
+  background-color: var(--color-glass);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Fixed-format digital project cards: flipping never changes layout. */
+:root {
+  --project-card-height: 400px;
+  --project-card-radius: 8px;
+  --project-card-shadow: 0 8px 28px -16px var(--primary);
+}
+.project-card { height: var(--project-card-height); min-width: 0; perspective: 1200px; }
+.project-card-rotor { position: relative; height: 100%; width: 100%; transform-style: preserve-3d; transition: transform 600ms var(--ease-os); }
+.project-card[data-flipped="true"] .project-card-rotor { transform: rotateY(180deg); }
+.project-card-face { position: absolute; inset: 0; display: flex; flex-direction: column; border-radius: var(--project-card-radius); backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: border-color 200ms, box-shadow 200ms; }
+.project-card-back { transform: rotateY(180deg); }
+.project-card-front-button { height: 100%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 24px; white-space: normal; text-align: left; border-radius: var(--project-card-radius); }
+@media (hover: hover) {
+  .project-card { transition: translate 200ms; }
+  .project-card:hover { translate: 0 -2px; }
+  .project-card:hover .project-card-face { border-color: var(--primary); box-shadow: var(--project-card-shadow); }
+}
+@media (min-width: 640px) { :root { --project-card-height: 380px; } }
+@media (min-width: 1024px) { .project-card { grid-column: span 2; } .project-card:nth-child(4) { grid-column: 2 / span 2; } }
+@media (min-width: 640px) and (max-width: 1023px) { .project-card:nth-child(5) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 10px); } }
+@media (prefers-reduced-motion: reduce) {
+  .project-card, .project-card-rotor, .project-card-face { transition: none; }
+  .project-card:hover { translate: none; }
+}

@@ -1,0 +1,11 @@
+- [x] Convert workspace switching into six in-app, scroll-snapped pages; remove AI Assistant.
+- [x] Make About BUILD/CREATE/LEARN information visible without hover.
+- [x] Add Skills and Projects workspaces using the exact prior brief content.
+- [x] Add Contact form with validation and endpoint-driven sending states.
+- [x] Verify page navigation, responsive rendering, console, and required copy; note unavailable external configuration.
+
+- [x] Replace Projects with five fixed-dimension click-to-flip cards and verified GitHub links.
+- [x] Simplify Journey 2025/2026 and remove the Skills CTA without changing the path.
+- [x] Add configured contact email, social links, and compact footer navigation.
+- [x] Verify card flips, independent GitHub links, keyboard/mobile rendering, notebook navigation, and footer links.
+- [x] Enable actual contact message delivery via Formspree (mdeageyd), with Reply-To from the visitor's email.
