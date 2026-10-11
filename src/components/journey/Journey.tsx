@@ -41,7 +41,9 @@ export function Journey() {
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(track);
-    track.querySelectorAll("[data-journey-chapter], [data-journey-end]").forEach((el) => ro.observe(el));
+    track
+      .querySelectorAll("[data-journey-chapter], [data-journey-end]")
+      .forEach((el) => ro.observe(el));
     return () => ro.disconnect();
   }, []);
 
@@ -84,7 +86,6 @@ export function Journey() {
           />
         </div>
 
-
         <div className="relative flex flex-col gap-16 sm:gap-24">
           {/* Mobile spine: one continuous rail through the whole Journey. */}
           <span
@@ -93,11 +94,7 @@ export function Journey() {
           />
 
           {MILESTONES.map((m) => (
-            <JourneyMilestone
-              key={m.id}
-              milestone={m}
-              isActive={m.id === activeId}
-            />
+            <JourneyMilestone key={m.id} milestone={m} isActive={m.id === activeId} />
           ))}
 
           <div data-journey-end className="relative pl-8 lg:pl-0">
@@ -114,8 +111,6 @@ export function Journey() {
             <p className="mt-6 font-display text-xs tracking-[0.32em] text-primary uppercase">
               {JOURNEY_COPY.continues}
             </p>
-
-
           </div>
         </div>
       </div>

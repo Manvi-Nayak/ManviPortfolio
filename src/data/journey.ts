@@ -37,13 +37,7 @@ export const MILESTONES: readonly Milestone[] = [
     year: "2024",
     title: "Explore",
     lead: "I started experimenting across web development, machine learning and AI while figuring out what kind of problems I actually enjoyed solving.",
-    themes: [
-      "Programming",
-      "Web Development",
-      "Machine Learning",
-      "AI",
-      "Problem Solving",
-    ],
+    themes: ["Programming", "Web Development", "Machine Learning", "AI", "Problem Solving"],
   },
   {
     id: "build",

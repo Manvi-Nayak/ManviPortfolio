@@ -5,8 +5,7 @@ export const ABOUT_COPY = {
   heading: ["More than code,", "this is me."],
   intro:
     "I'm a curious mind who loves building meaningful things, exploring ideas and turning imagination into reality.",
-  intro2:
-    "I believe in learning, unlearning and growing every single day.",
+  intro2: "I believe in learning, unlearning and growing every single day.",
   gameTitle: "Discover Manvi",
   gameSubtitle: "Explore the world and discover pieces of me.",
 } as const;
@@ -107,11 +106,6 @@ export const ABOUT_FACETS: readonly AboutFacet[] = [
     id: "learn",
     label: "I Learn",
     caption: "Curiosity as a daily practice.",
-    items: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "New Technologies",
-      "Experimentation",
-    ],
+    items: ["Artificial Intelligence", "Machine Learning", "New Technologies", "Experimentation"],
   },
 ];

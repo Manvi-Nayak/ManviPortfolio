@@ -4,10 +4,7 @@ import { ABOUT_COPY, EDUCATION } from "@/data/about";
 export function AboutIdentity() {
   return (
     <div className="max-w-xl">
-      <p
-        data-about-eyebrow
-        className="text-xs tracking-[0.28em] text-subtle-foreground uppercase"
-      >
+      <p data-about-eyebrow className="text-xs tracking-[0.28em] text-subtle-foreground uppercase">
         {ABOUT_COPY.eyebrow}
       </p>
 

@@ -22,20 +22,12 @@ export function HeroRole() {
   }, []);
 
   useEffect(() => {
-    const id = window.setInterval(
-      () => setIndex((i) => (i + 1) % HERO_ROLES.length),
-      HOLD_MS,
-    );
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % HERO_ROLES.length), HOLD_MS);
     return () => window.clearInterval(id);
   }, []);
 
   return (
-    <div
-      data-hero-role
-      className="relative h-9 sm:h-11"
-      aria-live="polite"
-      aria-atomic="true"
-    >
+    <div data-hero-role className="relative h-9 sm:h-11" aria-live="polite" aria-atomic="true">
       <AnimatePresence mode="wait" initial={false}>
         <motion.p
           key={HERO_ROLES[index]}

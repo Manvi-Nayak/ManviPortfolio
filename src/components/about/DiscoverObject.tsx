@@ -33,7 +33,10 @@ function ObjectArt({ id }: { id: DiscoveryId }) {
     case "learn": // open book
       return (
         <svg viewBox="0 0 32 32" className="size-full" aria-hidden>
-          <path d="M16 10c-2.6-2-6.4-2.4-10-1.8v14c3.6-.6 7.4-.2 10 1.8 2.6-2 6.4-2.4 10-1.8v-14c-3.6-.6-7.4-.2-10 1.8z" {...stroke} />
+          <path
+            d="M16 10c-2.6-2-6.4-2.4-10-1.8v14c3.6-.6 7.4-.2 10 1.8 2.6-2 6.4-2.4 10-1.8v-14c-3.6-.6-7.4-.2-10 1.8z"
+            {...stroke}
+          />
           <path d="M16 10v14" {...stroke} />
         </svg>
       );
@@ -42,7 +45,10 @@ function ObjectArt({ id }: { id: DiscoveryId }) {
       return (
         <svg viewBox="0 0 32 32" className="size-full" aria-hidden>
           <path d="M16 27V13" {...stroke} />
-          <path d="M16 17c-4 0-6-2.4-6-6 4 0 6 2.4 6 6zM16 14c4 0 6-2.4 6-6-4 0-6 2.4-6 6z" {...stroke} />
+          <path
+            d="M16 17c-4 0-6-2.4-6-6 4 0 6 2.4 6 6zM16 14c4 0 6-2.4 6-6-4 0-6 2.4-6 6z"
+            {...stroke}
+          />
           <path d="M10 27h12l-1.5-4h-9z" {...stroke} />
         </svg>
       );

@@ -22,9 +22,7 @@ export function HeroContent() {
     el.style.setProperty("--magnet-y", `${y}px`);
   };
 
-  const primaryMotion = reduced
-    ? {}
-    : { whileHover: { scale: 1.03 }, whileTap: { scale: 0.98 } };
+  const primaryMotion = reduced ? {} : { whileHover: { scale: 1.03 }, whileTap: { scale: 0.98 } };
 
   const resetMagnet = () => {
     magnetRef.current?.style.setProperty("--magnet-x", "0px");
@@ -33,10 +31,7 @@ export function HeroContent() {
 
   return (
     <div data-hero-content className="max-w-xl">
-      <p
-        data-hero-eyebrow
-        className="text-xs tracking-[0.28em] text-subtle-foreground uppercase"
-      >
+      <p data-hero-eyebrow className="text-xs tracking-[0.28em] text-subtle-foreground uppercase">
         {HERO_COPY.eyebrow}
       </p>
 
@@ -86,7 +81,6 @@ export function HeroContent() {
           Explore Workspace
           <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
         </motion.button>
-
       </div>
     </div>
   );

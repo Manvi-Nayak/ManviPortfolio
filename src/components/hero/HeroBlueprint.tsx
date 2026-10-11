@@ -2,11 +2,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 import { startBlueprintIdle } from "@/animations/hero/heroBlueprint";
-import {
-  BLUEPRINT_ACTIVITY,
-  BLUEPRINT_EDGES,
-  BLUEPRINT_NODES,
-} from "@/data/hero";
+import { BLUEPRINT_ACTIVITY, BLUEPRINT_EDGES, BLUEPRINT_NODES } from "@/data/hero";
 
 const REACT_RADIUS = 22; // viewBox units
 
@@ -94,7 +90,6 @@ export function HeroBlueprint() {
           overwrite: "auto",
         });
       });
-
     };
 
     const handleLeave = () => {
@@ -136,12 +131,7 @@ export function HeroBlueprint() {
       >
         <defs>
           <pattern id="hero-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-            <path
-              d="M 8 0 L 0 0 0 8"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.15"
-            />
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="0.15" />
           </pattern>
           <radialGradient id="hero-grid-mask-gradient">
             <stop offset="35%" stopColor="white" stopOpacity="1" />
@@ -195,11 +185,7 @@ export function HeroBlueprint() {
                 <path
                   id={`hero-pulse-${i}`}
                   d={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
-                  stroke={
-                    i % 2 === 0
-                      ? "oklch(0.68 0.17 259)"
-                      : "oklch(0.6 0.23 302)"
-                  }
+                  stroke={i % 2 === 0 ? "oklch(0.68 0.17 259)" : "oklch(0.6 0.23 302)"}
                   strokeWidth="0.5"
                   strokeLinecap="round"
                 />
@@ -212,9 +198,7 @@ export function HeroBlueprint() {
         {/* nodes */}
         {BLUEPRINT_NODES.map((node, i) => {
           const color =
-            node.accent === "secondary"
-              ? "oklch(0.6 0.23 302)"
-              : "oklch(0.68 0.17 259)";
+            node.accent === "secondary" ? "oklch(0.6 0.23 302)" : "oklch(0.68 0.17 259)";
           return (
             <g
               key={`node-${i}`}
