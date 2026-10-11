@@ -21,9 +21,7 @@ export function JourneyMilestone({ milestone, isActive }: JourneyMilestoneProps)
       <span
         aria-hidden
         className={`absolute top-2 left-0 size-[15px] rounded-pill border transition-all duration-500 lg:hidden ${
-          isActive
-            ? "border-primary bg-primary shadow-glow"
-            : "border-white/20 bg-surface"
+          isActive ? "border-primary bg-primary shadow-glow" : "border-white/20 bg-surface"
         }`}
       />
 
@@ -53,9 +51,7 @@ export function JourneyMilestone({ milestone, isActive }: JourneyMilestoneProps)
           {milestone.lead}
         </p>
         {milestone.support ? (
-          <p className="mt-2 max-w-prose text-sm text-subtle-foreground">
-            {milestone.support}
-          </p>
+          <p className="mt-2 max-w-prose text-sm text-subtle-foreground">{milestone.support}</p>
         ) : null}
 
         {milestone.themes ? (
@@ -75,7 +71,6 @@ export function JourneyMilestone({ milestone, isActive }: JourneyMilestoneProps)
             </ul>
           </>
         ) : null}
-
       </div>
     </article>
   );

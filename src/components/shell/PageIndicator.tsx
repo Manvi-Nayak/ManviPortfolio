@@ -13,7 +13,10 @@ export function PageIndicator() {
       aria-label="Page position"
       className="fixed right-1 top-1/2 z-30 flex -translate-y-1/2 flex-col items-center gap-2 sm:right-3 sm:gap-3"
     >
-      <span aria-live="polite" className="font-display text-[0.65rem] tabular-nums tracking-[0.12em] text-muted-foreground">
+      <span
+        aria-live="polite"
+        className="font-display text-[0.65rem] tabular-nums tracking-[0.12em] text-muted-foreground"
+      >
         {pageNumber} <span className="text-subtle-foreground">/ 06</span>
       </span>
       <ol className="flex flex-col items-center gap-2" aria-label="Portfolio pages">

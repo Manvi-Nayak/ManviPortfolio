@@ -11,9 +11,7 @@ export function WorkspacePlaceholder({ title, hint }: WorkspacePlaceholderProps)
         Workspace
       </span>
       <h1 className="text-3xl font-bold sm:text-5xl">{title}</h1>
-      {hint ? (
-        <p className="max-w-md text-sm text-subtle-foreground sm:text-base">{hint}</p>
-      ) : null}
+      {hint ? <p className="max-w-md text-sm text-subtle-foreground sm:text-base">{hint}</p> : null}
     </div>
   );
 }

@@ -10,7 +10,5 @@ interface GlassPanelProps {
 
 /** Subtle glass surface primitive: blur 16px, 1px hairline border. */
 export function GlassPanel({ children, className, as: Tag = "div" }: GlassPanelProps) {
-  return (
-    <Tag className={cn("glass rounded-lg shadow-glass", className)}>{children}</Tag>
-  );
+  return <Tag className={cn("glass rounded-lg shadow-glass", className)}>{children}</Tag>;
 }

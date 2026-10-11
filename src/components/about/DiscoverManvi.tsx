@@ -1,5 +1,12 @@
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+} from "motion/react";
 
 import { DiscoverObject } from "@/components/about/DiscoverObject";
 import { DiscoveryPanel } from "@/components/about/DiscoveryPanel";

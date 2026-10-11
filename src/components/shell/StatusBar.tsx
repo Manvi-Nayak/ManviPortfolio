@@ -23,9 +23,7 @@ export function StatusBar() {
         <div className="hidden items-center justify-center gap-2 text-xs text-muted-foreground sm:flex">
           <span className="size-1.5 rounded-pill bg-success" />
           <span>Online</span>
-          {active ? (
-            <span className="text-subtle-foreground">· {active.label}</span>
-          ) : null}
+          {active ? <span className="text-subtle-foreground">· {active.label}</span> : null}
         </div>
 
         <div className="flex items-center justify-end text-xs tabular-nums text-muted-foreground">
